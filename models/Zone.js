@@ -1,0 +1,9 @@
+const mongoose = require('mongoose');
+
+const ZoneSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String },
+  coordinates: { type: [[Number]], required: true }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Zone', ZoneSchema);
